@@ -8,7 +8,7 @@ class ReminderSchema extends Schema {
     this.create('reminders', (table) => {
       table.increments()
       table.integer('client_id').unsigned()
-      table.foreign('client_id').references('Clients.id')
+      table.foreign('client_id').references('clients.id')
       table.text('description')
       table.date('date_of_remind')
       table.timestamps()

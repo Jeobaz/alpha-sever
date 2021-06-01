@@ -19,21 +19,21 @@ const UserController = require("../app/Controllers/Http/UserController");
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use("Route");
 
-Route.post("login", "UserController.login");
-Route.post("register", "UserController.register");
+Route.post("api/login", "UserController.login");
+Route.post("api/register", "UserController.register");
 
 Route.group(() => {
   Route.put("/change_password", "UserController.changePassword");
   Route.get("getuser/:id", "UserController.show");
 })
-  .prefix("users")
+  .prefix("api/users")
   .middleware(["auth:jwt"]);
 
 Route.group(() => {
   Route.get("/me", "UserController.me");
   Route.put("/update_profile", "UserController.updateProfile");
 })
-  .prefix("account")
+  .prefix("api/account")
   .middleware(["auth:jwt"]);
 
 Route.group(() => {
@@ -44,7 +44,7 @@ Route.group(() => {
   Route.put("update_reminder_info/:id", "ReminderController.update");
   Route.post("create_new_remind", "ReminderController.create");
 })
-  .prefix("reminders")
+  .prefix("api/reminders")
   .middleware(["auth:jwt"]);
 
 Route.group(() => {
@@ -53,5 +53,5 @@ Route.group(() => {
   Route.put("update_client_info/:id", "ClientController.update");
   Route.post("create_new_client", "ClientController.create");
 })
-  .prefix("clients")
+  .prefix("api/clients")
   .middleware(["auth:jwt"]);
