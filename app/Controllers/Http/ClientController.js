@@ -2,7 +2,7 @@
 
 const User = require("../../Models/User");
 
-const Client = use("App/models/Client");
+const Client = use("App/Models/Client");
 
 class ClientController {
   async getAll({ response }) {
