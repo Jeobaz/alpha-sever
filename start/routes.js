@@ -23,7 +23,7 @@ Route.post("api/login", "UserController.login");
 Route.post("api/register", "UserController.register");
 
 Route.group(() => {
-  Route.put("/change_password", "UserController.changePassword");
+  Route.put("change_password", "UserController.changePassword");
   Route.get("getuser/:id", "UserController.show");
 })
   .prefix("api/users")

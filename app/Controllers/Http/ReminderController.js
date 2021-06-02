@@ -3,7 +3,7 @@
 const User = require("../../Models/User");
 
 const Reminder = use("App/Models/Reminder");
-const Client = use("App/models/Client");
+const Client = use("App/Models/Client");
 
 class ReminderController {
   async show({ params, response }) {
